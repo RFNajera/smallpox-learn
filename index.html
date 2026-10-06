@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smallpox: A Complete Learning Guide</title>
+    <meta
+      name="description"
+      content="An interactive, evidence-based guide to smallpox — its history, virus, illness, vaccine development, eradication, and preparedness today. Learning modules, quizzes, and an interactive timeline."
+    />
+    <meta name="author" content="René F. Najera, DrPH" />
+
+    <!-- Open Graph / social share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Smallpox: A Complete Learning Guide" />
+    <meta
+      property="og:description"
+      content="Explore smallpox history, illness, vaccines, and eradication — with interactive modules, quizzes, and a timeline."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Smallpox: A Complete Learning Guide" />
+    <meta
+      name="twitter:description"
+      content="Interactive modules, quizzes, and a timeline covering the smallpox virus and its vaccine."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+    <!-- Fonts: Clash Display (display) + General Sans (body) via Fontshare -->
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="disclaimer-banner">
+      Educational content only — not medical advice. For vaccination guidance, consult a
+      qualified health-care professional or your local health department.
+    </div>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#" data-nav="home" aria-label="Smallpox Learning Guide — home">
+          <!-- Logo: a shielded viral particle -->
+          <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2l11 4v8c0 7-4.6 12.5-11 16C9.6 26.5 5 21 5 14V6l11-4z" fill="currentColor" opacity="0.12"/>
+            <path d="M16 2l11 4v8c0 7-4.6 12.5-11 16C9.6 26.5 5 21 5 14V6l11-4z" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="16" cy="14" r="4" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M16 6v3M16 19v3M8.5 14h3M20.5 14h3M11 9l2 2M21 9l-2 2M11 19l2-2M21 19l-2-2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span>Smallpox<span style="color:var(--color-primary)">Learn</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="#" data-nav="home" data-view="home">Modules</a>
+          <a class="nav-link" href="#quizzes" data-nav="quizzes" data-view="quizzes">Quizzes</a>
+          <a class="nav-link" href="#timeline" data-nav="timeline" data-view="timeline">Timeline</a>
+          <a class="nav-link" href="#progress" data-nav="progress" data-view="progress">My progress</a>
+          <a class="nav-link" href="#about" data-nav="about" data-view="about">About</a>
+          <a class="nav-link" href="sources.html" target="_blank" rel="noopener">Sources</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:0.25rem">
+          <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode"></button>
+          <button class="icon-btn nav-toggle" aria-label="Toggle menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- ============ HOME ============ -->
+      <div id="view-home" class="view active">
+        <section class="hero">
+          <div class="container hero-grid">
+            <div>
+              <span class="hero-eyebrow">Interactive · Evidence-based</span>
+              <h1>Smallpox. A disease the world ended.</h1>
+              <p class="hero-lead">
+                Follow the story of the first vaccine and the only human disease eradicated worldwide. Eight source-linked lessons, quizzes, and a timeline explain the science and the people behind that achievement.
+              </p>
+              <div class="hero-actions">
+                <a class="btn btn-primary btn-lg" href="#module/origins" data-nav="module" data-id="origins">Start learning →</a>
+                <a class="btn btn-ghost btn-lg" href="#timeline" data-nav="timeline">Explore the timeline</a>
+              </div>
+              <div class="hero-stats">
+                <div class="hero-stat"><div class="num">1796</div><div class="label">Jenner’s vaccine demonstration</div></div>
+                <div class="hero-stat"><div class="num">1977</div><div class="label">Last natural case</div></div>
+                <div class="hero-stat"><div class="num">1980</div><div class="label">Eradication declared</div></div>
+              </div><p class="hero-source">Milestones: <a href="https://www.who.int/health-topics/smallpox">WHO</a></p>
+            </div><div class="hero-visual">
+              <img src="assets/hero.svg" alt="Illustrated milestones: first vaccine, last natural case, global eradication" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div class="section-eyebrow">Learning modules</div>
+              <h2>Eight lessons, start to finish</h2>
+              <p>Read them in order or jump to what interests you. Your progress is saved on this device.</p>
+            </div>
+            <div class="modules-grid" id="module-cards"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ MODULE (rendered) ============ -->
+      <div id="view-module" class="view"></div>
+
+      <!-- ============ QUIZ (rendered) ============ -->
+      <div id="view-quiz" class="view"></div>
+
+      <!-- ============ QUIZZES HUB ============ -->
+      <div id="view-quizzes" class="view">
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div class="section-eyebrow">Test your knowledge</div>
+              <h2>Module quizzes</h2>
+              <p>Each quiz gives instant feedback and an explanation for every answer. Your best score is saved.</p>
+            </div>
+            <div class="modules-grid" id="quiz-cards"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ TIMELINE ============ -->
+      <div id="view-timeline" class="view">
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div class="section-eyebrow">From early prevention to eradication</div>
+              <h2>A timeline of smallpox</h2>
+              <p>Key dates in prevention, vaccination and eradication. The larger dots mark turning points.</p>
+            </div>
+            <div class="timeline" id="timeline-list"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ PROGRESS ============ -->
+      <div id="view-progress" class="view">
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div class="section-eyebrow">Your learning</div>
+              <h2>My progress</h2>
+              <p>Tracked privately in your browser — nothing is uploaded anywhere.</p>
+            </div>
+            <div class="progress-wrap" id="progress-stats"></div>
+            <div class="modules-grid" id="progress-detail"></div>
+            <div style="margin-top:var(--space-10)">
+              <button class="btn btn-ghost" id="reset-progress">Reset my progress</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ ABOUT ============ -->
+      <div id="view-about" class="view">
+        <section class="section">
+          <div class="container container-narrow">
+            <div class="section-eyebrow">About this project</div>
+            <h2 style="font-size:var(--text-2xl);margin-bottom:var(--space-5)">Why this guide exists</h2>
+            <p>Smallpox Learn is a companion to <a href="https://github.com/RFNajera/measles-learn">Measles Learn</a>, and a starting point for a wider collection about vaccine-preventable diseases. It explains smallpox in plain language, with references linked alongside the lessons.</p>
+            <p>The guide distinguishes natural transmission from laboratory-associated cases, historical vaccines from current products, and evidence from uncertainty. Reflection prompts invite discussion; they are not factual claims.</p>
+            <div class="callout"><strong>Education only.</strong> This is not a diagnostic tool or personal vaccination advice. Consult a qualified health professional or public health department for individual guidance.</div>
+            <h3>Author &amp; adaptation</h3><p>Created for René F. Najera, DrPH, using the MIT-licensed Measles Learn framework. Content reviewed against the linked sources on 6 October 2026.</p>
+            <h3>Check the evidence</h3><p>Read the <a href="sources.html">organized source list</a>, including notes on uncertainty and vaccine product differences. You can print it or save it as a PDF using your browser.</p>
+                        <div class="hero-actions" style="margin-top:var(--space-8)">
+              <a class="btn btn-primary" href="#module/origins" data-nav="module" data-id="origins">Start with Module 1 →</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="#" data-nav="home" style="margin-bottom:var(--space-3)">
+              <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <path d="M16 2l11 4v8c0 7-4.6 12.5-11 16C9.6 26.5 5 21 5 14V6l11-4z" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="16" cy="14" r="4" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <span>Smallpox<span style="color:var(--color-primary)">Learn</span></span>
+            </a>
+            <p>A free, open guide to smallpox and its vaccine, built on the evidence — for students, teachers, and anyone who wants to understand the disease.</p>
+          </div>
+          <nav class="nav-links" style="position:static;transform:none;box-shadow:none;background:none;border:none;flex-direction:column;align-items:flex-start;padding:0">
+            <a class="nav-link" href="#" data-nav="home" style="padding-left:0">Modules</a>
+            <a class="nav-link" href="#quizzes" data-nav="quizzes" style="padding-left:0">Quizzes</a>
+            <a class="nav-link" href="#timeline" data-nav="timeline" style="padding-left:0">Timeline</a>
+            <a class="nav-link" href="#about" data-nav="about" style="padding-left:0">About</a>
+            <a class="nav-link" href="sources.html" target="_blank" rel="noopener" style="padding-left:0">Sources</a>
+          </nav>
+        </div>
+        <p class="footer-note">
+          © <span id="year"></span> René F. Najera. Educational content, not medical advice. Sources cited throughout.
+          Sources reviewed October 2026.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
