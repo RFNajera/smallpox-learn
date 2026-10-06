@@ -18,8 +18,10 @@ python3 -m http.server 8000
 ```
 Open http://localhost:8000. Plain HTML/CSS/JavaScript; no dependency installation or build step. Content is in `js/data.js`. `sources.html` is a printable reference handout. Content reviewed 6 October 2026.
 
-## Publish on GitHub Pages
-Create `RFNajera/smallpox-learn`, push these files to `main`, then select **Settings → Pages → Source → GitHub Actions**. The included workflow deploys only public site files. The expected default URL after deployment is `https://rfnajera.github.io/smallpox-learn/`; it is not a confirmed live URL until deployment succeeds. No custom domain is assumed.
+## Live site and deployment
+[Open Smallpox Learn](https://coding.epidemiological.net/smallpox-learn/)
+
+GitHub Pages uses the included GitHub Actions workflow. Changes pushed to `main` deploy the public site files automatically. The project inherits the account’s existing coding.epidemiological.net domain; no new custom domain was configured.
 
 ## Content standards
 Each factual lesson paragraph and each timeline item links supporting sources. Quizzes derive from the lessons. Historical uncertainty, case-fatality differences, certification dates, and vaccine-specific safety are distinguished. Reflection questions are educational prompts, not evidence claims. This site provides education, not diagnosis or individual vaccination advice.
